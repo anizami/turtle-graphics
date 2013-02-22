@@ -4,20 +4,22 @@ import java.awt.Color;
 
 import edu.macalester.generator.FibonacciGenerator;
 import edu.macalester.generator.PrimeGenerator;
+import edu.macalester.generator.SteppingGenerator;
 import edu.macalester.turtle.Turtle;
 import edu.macalester.turtle.TurtleProgram;
 
 public class Spiral extends TurtleProgram {
     public void run() {
     	spiral(Color.RED, 90);
+    	spiral(Color.BLUE, 90.1);
 
     	
     }
     
-    private void spiral(Color color, int angle) {
-        setTurtleSpeedFactor(1);
+    private void spiral(Color color, double angle) {
+        setTurtleSpeedFactor(0);
         
-        FibonacciGenerator gen = new FibonacciGenerator();
+        SteppingGenerator gen = new SteppingGenerator(2, 1.5);
         
         Turtle turtle = new Turtle(getWidth() / 2, getHeight() / 2);
         add(turtle);
